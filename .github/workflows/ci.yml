@@ -1,0 +1,27 @@
+name: Build and Test Dockerized App
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build and Test Node.js App
+        run: |
+          docker build -t my-node-app .
+          docker run --rm my-node-app npm test
+
+      - name: Build and Test Flask App
+        run: |
+          docker build -t my-flask-app .
+          docker run --rm my-flask-app pytest
