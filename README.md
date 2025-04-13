@@ -31,7 +31,7 @@ But once it’s in production, you realize:
 ---
 
 ## Workflow Diagram:
-![Diagram](canaryDeploymentworkflow.svg)
+![Diagram](dockarizednodejs.svg)
 
 
 ## Why Use This?
